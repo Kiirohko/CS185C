@@ -66,11 +66,11 @@ def read_fasta(fasta):
 
 def process_defline(defline):
     """
-    Process and extract information from the fasta defline
-    specially formatted for coral COI sequences.
+    Process and extract information from the specially formatted
+    fasta deflines.
     :param defline: (string) the defline to process
     :return: tuple containing the accession number (string) and
-            tuple of scientific name, common name, and coral type
+            tuple of scientific name, common name, and taxonomic order
     """
     # expected defline format:
     # >accession_scientific_name common_name order
@@ -255,7 +255,7 @@ def main():
           f'({query_common_name})...')
 
     # write alignment report into .txt file
-    # write coral information into .csv file
+    # write organism information into .csv file
     with open(txt, 'w', encoding='utf-8') as sys.stdout:
         with open(csv, 'w', encoding='utf-8') as csv_file:
             # write column headers of .csv file
